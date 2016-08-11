@@ -40,6 +40,7 @@ GEM
       tzinfo (~> 1.1)
     arel (7.1.1)
     builder (3.2.2)
+    byebug (9.0.5)
     concurrent-ruby (1.0.2)
     erubis (2.7.0)
     globalid (0.3.7)
@@ -55,8 +56,12 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
     minitest (5.9.0)
+    mysql2 (0.4.4)
     mysql2 (0.4.4-x64-mingw32)
     nio4r (1.2.1)
+    nokogiri (1.6.8)
+      mini_portile2 (~> 2.1.0)
+      pkg-config (~> 1.1.7)
     nokogiri (1.6.8-x64-mingw32)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
@@ -107,6 +112,7 @@ GEM
     websocket-extensions (0.1.2)
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES

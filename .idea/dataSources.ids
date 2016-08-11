@@ -52,7 +52,7 @@
         <data-type>varchar(255)|0</data-type>
       </column>
       <column id="21" parent="10" name="content">
-        <data-type>longtext|0</data-type>
+        <data-type>mediumtext|0</data-type>
       </column>
       <column id="22" parent="10" name="commentable_id">
         <data-type>int(11)|0</data-type>
@@ -72,7 +72,6 @@
         <data-type>datetime|0</data-type>
       </column>
       <column id="27" parent="10" name="updated_at">
-        <mandatory>1</mandatory>
         <data-type>datetime|0</data-type>
       </column>
       <key id="28" parent="10" name="PRIMARY">
