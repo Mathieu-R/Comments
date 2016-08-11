@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails Comments: development" uuid="a55f619e-3d59-46fb-b527-a9c10b3b4448">
+      <user-name>root</user-name>
+      <user-password>dfd8dfc5dfc5dfde</user-password>
+      <introspection-scope>Comments_development:</introspection-scope>
+      <resolve-scope>Comments_development:</resolve-scope>
+    </data-source>
+    <data-source name="Rails Comments: test" uuid="1fad5ee9-2c66-4378-98a2-a98419765c08">
+      <user-name>root</user-name>
+      <user-password>dfd8dfc5dfc5dfde</user-password>
+    </data-source>
+    <data-source name="Rails Comments: production" uuid="075491b2-64e2-415e-8ef4-b9adf333a15d">
+      <user-name>root</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddfe9dfe5dfe7dfe7dfefdfe4dffedff9dff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+    </data-source>
+  </component>
+</project>
