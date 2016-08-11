@@ -1,8 +1,14 @@
 class CommentsController < ApplicationController
   def index #Afficher la liste des commentaires => get /comments
     comments = Comment.select('id, username, content, commentable_id, commentable_type, reply, created_at, updated_at')
-                   .where(["type = ? and id = ?", params[:type], params[:id]])
+                   .where("reply = 0")
                    .order("created_at ASC")
+    comments .each |comment| do
+      replies = Comment.select('id, username, content, commentable_id, commentable_type, reply, created_at, updated_at')
+                    .where(["commentable_id = ?, reply = 1", comment.id])
+                    .order("created_at ASC")
+      comment[:replies] = replies
+    end
     render json: comments, status: 200
   end
 

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/comments/:type&:id' => 'comments#index'
+  get '/comments/' => 'comments#index'
   post '/comments/:id' => 'comments#create'
   put '/comments/:id' => 'comments#update'
   delete '/comments/:id' => 'comments#destroy'
