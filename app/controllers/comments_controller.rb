@@ -28,11 +28,17 @@ class CommentsController < ApplicationController
     if !newContent.valid?
       render :json {error: comment.errors.messages}
     else
-      render :json {message: "Commentaire modifié avec succès"}
+      render :json {message: "Commentaire modifié avec succès !"}
     end
   end
 
   def destroy #Supprimer un commentaire => delete /comments/:id
-    Comment.find(params[:id]).destroy
+    comment = Comment.find(params[:id])
+    if comment.ip == ip()
+      comment.destroy
+      render :json {message: "Commentaire supprimé avec succès !"}
+    else
+      render :json {error: "Ce commentaire n'a pas pu être supprimé"}
+    end
   end
 end
