@@ -16,9 +16,9 @@ class CommentsController < ApplicationController
   def create #Créer un nouveau commentaire => post /comments
     comment = Comment.create(username: username, mail: mail, commentable_id: c_id.to_i, commentable_type: c_type, reply: reply.to_i, ip: ip(), created_at: current())
     if !comment.valid?
-      render :json {error: comment.errors.messages}
+      render json: {error: comment.errors.messages}
     else
-      render :json {message: "Commentaire ajouté avec succès"}
+      render json: {message: "Commentaire ajouté avec succès"}
     end
   end
 
@@ -26,9 +26,9 @@ class CommentsController < ApplicationController
     newContent = Comment.find(params[:id]).content = content
     newContent = newContent.save
     if !newContent.valid?
-      render :json {error: comment.errors.messages}
+      render json: {error: comment.errors.messages}
     else
-      render :json {message: "Commentaire modifié avec succès !"}
+      render json: {message: "Commentaire modifié avec succès !"}
     end
   end
 
@@ -36,9 +36,9 @@ class CommentsController < ApplicationController
     comment = Comment.find(params[:id])
     if comment.ip == ip()
       comment.destroy
-      render :json {message: "Commentaire supprimé avec succès !"}
+      render json: {message: "Commentaire supprimé avec succès !"}
     else
-      render :json {error: "Ce commentaire n'a pas pu être supprimé"}
+      render json: {error: "Ce commentaire n'a pas pu être supprimé"}
     end
   end
 end
