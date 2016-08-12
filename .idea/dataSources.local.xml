@@ -7,5 +7,21 @@
       <introspection-scope>comments_development:</introspection-scope>
       <resolve-scope>comments_development:</resolve-scope>
     </data-source>
+    <data-source name="Rails Comments: test" uuid="5adcea4f-0b45-4591-a508-023812276e45">
+      <first-sync>true</first-sync>
+      <user-name>root</user-name>
+      <user-password>dfd8dfc5dfc5dfde</user-password>
+    </data-source>
+    <data-source name="Rails Comments: development" uuid="23dd7f71-e08d-47fe-bbb6-8702e163cc1a">
+      <user-name>root</user-name>
+      <user-password>dfd8dfc5dfc5dfde</user-password>
+      <introspection-scope>Comments_development:</introspection-scope>
+      <resolve-scope>Comments_development:</resolve-scope>
+    </data-source>
+    <data-source name="Rails Comments: production" uuid="9a79b0f6-92c0-45b7-a92f-9cfdd561c51a">
+      <first-sync>true</first-sync>
+      <user-name>root</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddfe9dfe5dfe7dfe7dfefdfe4dffedff9dff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+    </data-source>
   </component>
 </project>

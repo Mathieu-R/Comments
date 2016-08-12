@@ -107,4 +107,116 @@
       </key>
     </database-model>
   </data-source>
+  <data-source name="Rails Comments: test" uuid="5adcea4f-0b45-4591-a508-023812276e45">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source name="Rails Comments: development" uuid="23dd7f71-e08d-47fe-bbb6-8702e163cc1a">
+    <database-info product="MySQL" version="5.7.13-0ubuntu0.16.04.2" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="Comments_development">
+        <visible>1</visible>
+      </schema>
+      <schema id="2" name="information_schema"/>
+      <schema id="3" name="mysql"/>
+      <schema id="4" name="performance_schema"/>
+      <schema id="5" name="sys"/>
+      <table id="6" parent="1" name="ar_internal_metadata"/>
+      <table id="7" parent="1" name="comments"/>
+      <table id="8" parent="1" name="posts"/>
+      <table id="9" parent="1" name="schema_migrations"/>
+      <column id="10" parent="6" name="key">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="11" parent="6" name="value">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="12" parent="6" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="13" parent="6" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime|0</data-type>
+      </column>
+      <key id="14" parent="6" name="PRIMARY">
+        <columns>key</columns>
+        <primary>1</primary>
+      </key>
+      <column id="15" parent="7" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="16" parent="7" name="username">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="17" parent="7" name="mail">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="18" parent="7" name="content">
+        <data-type>longtext|0</data-type>
+      </column>
+      <column id="19" parent="7" name="commentable_id">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="20" parent="7" name="commentable_type">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="21" parent="7" name="reply">
+        <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="22" parent="7" name="ip">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="23" parent="7" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="24" parent="7" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime|0</data-type>
+      </column>
+      <key id="25" parent="7" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="26" parent="8" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="27" parent="8" name="name">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="28" parent="8" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime|0</data-type>
+      </column>
+      <column id="29" parent="8" name="updated_at">
+        <mandatory>1</mandatory>
+        <data-type>datetime|0</data-type>
+      </column>
+      <key id="30" parent="8" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="31" parent="9" name="version">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <key id="32" parent="9" name="PRIMARY">
+        <columns>version</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+  <data-source name="Rails Comments: production" uuid="9a79b0f6-92c0-45b7-a92f-9cfdd561c51a">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
 </component>

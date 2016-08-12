@@ -13,8 +13,9 @@
           <a href="#">Répondre</a>
         </div>
       </div>
-      <div class="comments"></div>
+      <div class="comments">
         <comment :comment="reply" v-for="reply in comment.replies" :ip="ip"></comment> <!-- Composant à l'intérieur de lui-même -->
+      </div>
     </div>
 </template>
 
@@ -22,7 +23,7 @@
     import axios from 'axios'
 
     export default {
-        name: comment,
+        name: 'comment',
         props: {
           ip: String,
           comment: Object
