@@ -1,16 +1,15 @@
 class CommentsController < ApplicationController
   def index #Afficher la liste des commentaires => get /comments
-    comments = Comment.select('id, username, content, commentable_id, commentable_type, reply, created_at, updated_at') #Sélectionne les messages qui ne sont pas des réponses
+    comments = Comment.select('id, username, mail, content, commentable_id, commentable_type, reply, created_at, updated_at') #Sélectionne les messages qui ne sont pas des réponses
                    .where("reply = 0")
                    .order("created_at ASC")
     comments = comments.as_json #Convertis le model en json
     comments.each do |comment| #Pour chaque message
-      replies = Comment.select('id, username, content, commentable_id, commentable_type, reply, created_at, updated_at') #On sélectionne les réponse à ce message
+      replies = Comment.select('id, username, mail, content, commentable_id, commentable_type, reply, created_at, updated_at') #On sélectionne les réponse à ce message
                     .where("commentable_id = ?", [comment['id']])
                     .where("reply = 1")
                     .order("created_at ASC")
       comment[:replies] = replies #On l'ajoute à la clé replies de ce message
-      #render json: replies
     end
     render json: comments, status: 200 #On renvoi le tout
   end
@@ -20,7 +19,7 @@ class CommentsController < ApplicationController
     ip = request.remote_ip #Ip du client
 
     #Insert le message dans la db
-    comment = Comment.create(username: params[:username], mail: params[:mail], content: params[:content], commentable_id: params[:id].to_i, commentable_type: params[:commentable_type], reply: params[:reply].to_i, ip: ip, created_at: Time.now.to_s(:db))
+    comment = Comment.create(username: params[:username], mail: Digest::MD5.hexdigest(params[:mail]), content: params[:content], commentable_id: params[:id].to_i, commentable_type: params[:commentable_type], reply: params[:reply].to_i, ip: ip, created_at: Time.now.to_s(:db))
     if !comment.valid? #S'il y a une erreur
       render json: {error: comment.errors.messages}
     else #Sinon tout va bien
@@ -44,7 +43,7 @@ class CommentsController < ApplicationController
     if comment.ip == request.remote_ip #Si l'ip du commentaire est égale à l'ip du client
       comment.destroy #On supprime le commentaire
       render json: {message: "Commentaire supprimé avec succès !"}
-    else #Sinon 
+    else #Sinon
       render json: {error: "Ce commentaire n'a pas pu être supprimé"}
     end
   end
