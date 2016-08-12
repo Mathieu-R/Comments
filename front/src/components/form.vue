@@ -1,6 +1,6 @@
 <template>
     <div>
-      <h3 class="ui header dividing">Commenter</h3>
+      <h3 class="ui header dividing">{{ reply == 0 ? 'Commenter' : 'Répondre' }}</h3>
       <form class="ui form" action="">
         <div class="two field">
           <div class="field">
@@ -17,7 +17,8 @@
           <textarea v-model="content"></textarea>
         </div>
         <button class="ui blue labeled submit icon button">
-          <i class="icon edit"></i>Commenter
+          <i class="icon edit"></i>
+          {{ reply == 0 ? 'Commenter' : 'Répondre' }}
         </button>
       </form>
     </div>

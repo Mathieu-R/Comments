@@ -15,15 +15,18 @@
       </div>
       <div class="comments">
         <comment :comment="reply" v-for="reply in comment.replies" :ip="ip"></comment> <!-- Composant à l'intérieur de lui-même -->
+        <comment-form :id=comment.commentable_id :model=comment.commentable_type :reply=comment.id v-if="comment.reply == 0"></comment-form>
       </div>
     </div>
 </template>
 
 <script type=text/babel>
     import axios from 'axios'
+    import commentForm from 'components/form'
 
     export default {
         name: 'comment',
+        components: { commentForm },
         props: {
           ip: String,
           comment: Object
