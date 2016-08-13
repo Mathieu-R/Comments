@@ -26,6 +26,7 @@
         ready () {
           axios.get('/comments').then((response) => {
             this.comments = response.data
+            console.log(this.comments);
           })
         }
 
